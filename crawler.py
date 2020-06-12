@@ -1,6 +1,7 @@
 import requests
 import re
 
+
 class PyCrawler(object):
     def init(self, starting_url):
         self.starting_url = starting_url
@@ -8,6 +9,7 @@ class PyCrawler(object):
 
     def start(self):
         pass
+
 
 if __name__ == "__main__":
     crawler = PyCrawler()
