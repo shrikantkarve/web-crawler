@@ -1,9 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://webscraper.io/test-sites/tables"
-
-html_doc = """
+html_doc1 = """
 <html><head><title>The Dormouse's story</title></head>
 <body>
 <p class="title"><b>The Dormouse's story</b></p>
@@ -17,16 +15,18 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
+url = "https://webscraper.io/test-sites/tables"
+
 if __name__ == "__main__":
-    #r = requests.get(url)
-    #data = r.text
-    #soup = BeautifulSoup(data,'html.parser')
-    soup = BeautifulSoup(html_doc,'html.parser')
-    print(soup.prettify)
+    r = requests.get(url)
+    data = r.text
+    soup = BeautifulSoup(data,'html.parser')
+    #print(soup.prettify)
     l = []
     for link in soup.find_all('a'):
-        l.append(link.get('class'))
+        l.append(link.get('href'))
     
-    for i in l:
-        print(i)
+    for _ in l:
+        print(_)
+
 
